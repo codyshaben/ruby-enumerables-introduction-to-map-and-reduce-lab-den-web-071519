@@ -30,21 +30,11 @@ def reduce_to_total(source_array, i = 0)
 end
 
 def reduce_to_all_true(source_array)
-  return source_array.each do |value|
-    if !value
-     return false
-    else
-      true
-    end
-  end
-  
+  (source_array).reduce { |i| i != true }
+end
 
 def reduce_to_any_true(source_array)
-   return source_array.each do |value|
-      return true
-    else
-      false
-    end
+  (source_array).reduce(false) { |i| i == false }
 end
 
 
